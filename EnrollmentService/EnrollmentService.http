@@ -1,0 +1,20 @@
+@api = http://localhost:5080
+@section = 11111111-1111-1111-1111-111111111111
+
+### Step 6 - happy path (tuition within the 20,000 limit)
+POST {{api}}/enrollments
+Content-Type: application/json
+
+{ "studentId": "2026-00123", "sectionId": "{{section}}", "tuition": 15000 }
+
+### Step 7 - compensation path (declined, seat released)
+POST {{api}}/enrollments
+Content-Type: application/json
+
+{ "studentId": "2026-00124", "sectionId": "{{section}}", "tuition": 50000 }
+
+### Everything EnrollmentDb holds
+GET {{api}}/state
+
+### Sections
+GET {{api}}/sections
