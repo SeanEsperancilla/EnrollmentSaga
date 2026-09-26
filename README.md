@@ -29,7 +29,7 @@ All messages go through the durable topic exchange `saga.events`:
 
 ## Prerequisites
 
-- .NET 10 SDK
+- .NET 9 SDK or newer (projects target `net9.0`; a .NET 10 SDK builds them too)
 - Docker
 
 ## Step 0 – Infrastructure
